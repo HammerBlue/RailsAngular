@@ -1,0 +1,183 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.editForm,
+table#userListTable {
+	max-width: 1700px;
+    background: white;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border-radius:.5em ;
+    border: 1px solid #c6c8ca;
+    font-size: medium;
+    margin: 1em 0em;
+}
+table.editForm {
+	font-size: 85%;
+}
+#userListTable thead tr,
+table.editForm thead tr {
+    background-color: #4d89bd;
+    border-radius:.5em .5em 0 0 ;     
+}
+table.editForm th,
+#userListTable th {
+    border: 0;
+    outline: 0;
+    margin: 0;
+    padding: 1em;
+    color: #fff;
+    font-weight: bold;
+    font-family: "Gotham", Arial, sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+#userListTable tbody tr:nth-child(odd) {
+    background-color: #fcfcfc;
+}
+table.editForm tbody tr,
+#userListTable tbody tr {
+    color: #555;
+    font-size: medium;
+    height: 36px;
+    transition: all 0.25s;
+}
+#userListTable tbody td:last-child {
+	text-align: right;
+	padding-right: 20px;
+}
+table.editForm table {
+    margin-bottom: 0em;
+}
+table.editForm tbody tr:hover,
+#userListTable tbody tr:hover {
+    background-color: #4d89bd;
+    color: #fff;
+    cursor: pointer;
+}
+table.editForm tbody td,
+#userListTable tbody td {
+    vertical-align: middle;
+    max-width: 275px;
+    overflow: hidden;
+}
+table.editForm tbody th,
+table.editForm tbody td,
+#userListTable th,
+#userListTable td {
+    font-size: 0.75em;
+}
+table.editForm td,
+#userListTable td {
+    padding: 0 1em 0 1.0em;
+    font-family: "Gotham", Arial, sans-serif;
+}
+#userListTable tbody td:last-child>button {
+    position: absolute;
+    margin-top: -.25em;
+    margin-left: 1.75em;
+    width: 1.75em;
+    height: 1.75em;
+    background-color: #af2626;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 1.25em;
+    cursor: pointer;
+}
+#userListTable tbody td:last-child>button:hover {
+    background-color: #851d1d;
+}
+#userListTable tbody td:last-child>button::before {
+    content: "\00d7";
+    position: absolute;
+    width: 1.5em;
+    left: -0.1em;
+    top: 2px;
+    font-family: 'Orion_CareerStep', Arial, sans-serif;
+    font-size: 1.1em;
+}
+
+#userListTable label {
+    color: #4d89bd;
+    font-family: "Gotham", Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: .33em;
+}
+table.editForm input,
+#userListTable input {
+    border-radius: .33em;
+}
+input[type=text].searchFilter {
+    padding: 0.25em;
+    margin: 0 0.5em 0.05em 0;
+    width: 50%;
+    color: #555;
+    vertical-align: middle;
+    border: 1px solid #999;
+    border-radius: .33em;
+    background: url(/assets/search_glass.png) 99% center no-repeat;
+}
+input[type=text][disabled].searchFilter {
+    background: none;
+    border: none;
+    cursor: text;
+    font-weight: bold;
+    font-size: 1.5em;
+    vertical-align: baseline;
+}
+input[type=text][data-inline-edit] {
+	color: #555;
+	border: 0;
+	background: none;
+    cursor: pointer;
+    padding: 4px 7px;
+}
+table.editForm input[type=text][data-inline-edit] {
+    margin-left: -.5em;
+}
+input[type=text][data-inline-edit]:hover {
+	background-color: white;
+}
+td.inlineEdit {
+	padding-left: 5px;
+}
+button.saveButton,
+button.cancelButton,
+button.searchButton {
+    border-radius: .4em;
+    background-color: #669966;
+    background-image: none;
+    color: #fff;
+    padding: .25em 0.75em;
+    border: none;
+    display: inline-block;
+    line-height: 140%;
+    text-align: center;
+    font-size: .90em;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: Arial, Verdana, Sans-serif;
+}
+button.cancelButton {
+	background-color: #ccc;
+}
+button.searchButton:hover {
+	background-color: #8CBF5B;
+}
+
+.sorting {
+    background: url('/assets/sort_both.png') no-repeat center right;
+}
+.sorting_asc {
+    background: url('/assets/sort_asc.png') no-repeat center right;
+}
+.sorting_desc {
+    background: url('/assets/sort_desc.png') no-repeat center right;
+}
+.sorting_asc:after, .sorting_desc:after, .sorting:after {
+    margin-left: 0.25em;
+}

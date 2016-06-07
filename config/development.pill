@@ -1,0 +1,9 @@
+Bluepill.application("r2") do |app|
+  app.process("Server") do |server|
+    server.start_command = "service unicorn start development"
+    server.stop_command = "service unicorn stop"
+    server.pid_file = "/home/cstep/r2/tmp/pids/unicorn.pid"
+    server.checks :cpu_usage, every: 10.seconds, below: 40, times: 3
+    server.checks :mem_usage, every: 10.seconds, below: 100.megabytes, times: [3,5]
+  end
+end

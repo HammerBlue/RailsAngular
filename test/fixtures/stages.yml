@@ -1,0 +1,15 @@
+DEFAULTS: &DEFAULTS
+  Instructions: Get them right
+  RandomizeQuestions: 0
+
+single_questiongroup_tf:
+  ID: 1
+  Name: Single Questiongroup TF
+  Description: only connected to the TF question group
+  <<: *DEFAULTS
+
+single_questiongroup_multiplechoice:
+  ID: 2
+  Name: Single Questiongroup Multiplechoice
+  Description: only connected to the Multiplechoice question group
+  <<: *DEFAULTS

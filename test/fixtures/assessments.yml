@@ -1,0 +1,30 @@
+DEFAULTS: &DEFAULTS
+  Partnership_ID: 1
+  AssessmentType_ID: 1
+  License_ID: 6
+  LogoURL: exams.jpg
+  DurationMinutes: 
+  Retakes: 5
+  ActiveStatus: 1
+  Summary:
+  EnforceDecimal: 1
+  EnforceQuestionOrder: 0
+  ShowHints: 0
+  ShowFeedback: 0
+  ShowInstructions: 0
+  ShowRunningTotal: 0
+  QuestionsToDisplay:
+  AdminRetakeOverride: 0
+
+
+no_time_single_stage_single_questiongroup_tf:
+  ID: 1
+  Name: No Time Single Stage Single Questiongroup TF
+  Description: This doesn't have a time limit, has 1 stage, 1 question group, which only has tf questions
+  <<: *DEFAULTS
+
+no_time_double_stage:
+  ID: 2
+  Name: No Time Two Stages
+  Description: This doesn't have a time limit, has 2 stages
+  <<: *DEFAULTS

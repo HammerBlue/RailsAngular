@@ -1,0 +1,13 @@
+admin:
+  ID: 1
+  LoginName: alesa
+  Password: <%= Digest::MD5.hexdigest("pass") %>
+  FirstLoginDateTime: 2008-06-05 19:32:18
+  NewestLoginDateTime: 2015-11-04 22:08:50
+  LoginCount: 3686
+  BelongsToOrganization_ID: 2
+  CanAccessTools: 1
+  ToolScopeOrganization_ID: null
+  ToolScopeTrainingField_ID: null
+  Disability: None
+  Individual_Contact_ID: 1

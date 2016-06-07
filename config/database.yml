@@ -1,0 +1,40 @@
+default: &default
+  adapter: mysql2
+  pool: 5
+  timeout: 5000
+  database: csdb
+  host: localhost
+  username: webapp
+  password: c0mplete
+
+dev_admin:
+  <<: *default
+  username: csdev
+  password: s00n
+
+development:
+  <<: *default
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: csdbtest
+  encoding: latin1
+  charset: latin1
+  collation: latin1_swedish_ci
+
+production:
+  <<: *default
+  host: <%= ENV['DATABASE'] %>
+
+## Will possibly save this for later
+## Couldn't figure it out. Though
+## just passing host info will probably
+## work as well
+##<% if ENV['SERVER'] == "DRS" %>
+##  host: localhost
+##<% else %> 
+##  host: 192.168.10.100
+##<% end  %>

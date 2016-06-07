@@ -1,0 +1,45 @@
+<table class="editForm">
+    <thead>
+        <tr>
+            <th>Field</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>ID</td>
+            <td>{{UserEditCtrl.user.ID}}</td>
+        </tr>
+        <!--tr>
+            <td>Name</td>
+            <td><input type="text" data-inline-edit data-ng-model="UserEditCtrl.user.Name"/></td>
+        </tr-->
+        <tr>
+            <td>Login Name</td>
+            <td><input type="text" data-inline-edit data-ng-model="UserEditCtrl.user.LoginName"/></td>
+        </tr>
+        <tr>
+            <td>Login Count</td>
+            <td>{{UserEditCtrl.user.LoginCount}}</td>
+        </tr>
+        <tr>
+            <td>First Login</td>
+            <td>{{UserEditCtrl.user.FirstLoginDateTime | date}}</td>
+        </tr>
+        <tr>
+            <td>Most Recent Login</td>
+            <td>{{UserEditCtrl.user.NewestLoginDateTime | date}}</td>
+        </tr>
+       	<tr>
+       		<td>Is Admin User?</td>
+            <td>
+            	<select data-ng-model="UserEditCtrl.user.CanAccessTools" data-ng-options="admin.value as admin.display for admin in UserEditCtrl.isAdminOptions">
+            	</select>
+			</td>
+        </tr>
+    </tbody>
+</table>
+<section>
+    <button data-ng-click="UserEditCtrl.saveUser()" class="saveButton">Save</button>
+    <button data-ng-click="UserEditCtrl.cancelEdit()" class="cancelButton">Cancel</button>
+</section>

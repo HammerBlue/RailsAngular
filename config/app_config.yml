@@ -1,0 +1,11 @@
+defaults: &defaults
+  configValue: "Put what you want"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

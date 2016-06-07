@@ -1,0 +1,34 @@
+<section>
+	<list-filter data-search-text="UserListCtrl.searchText"/>
+</section>
+<table id="userListTable">
+	<thead>
+		<tr>
+			<th data-ng-click="UserListCtrl.predicate='ID';UserListCtrl.reverse=!UserListCtrl.reverse"
+				data-ng-class="{sorting: UserListCtrl.predicate != 'ID', sorting_asc: UserListCtrl.reverse == false, sorting_desc: UserListCtrl.reverse == true}">ID</th>
+			<!--th data-ng-click="UserListCtrl.predicate='Name';reverse=!reverse"
+				data-ng-class="{sorting: UserListCtrl.predicate != 'Name', sorting_asc: UserListCtrl.reverse == false, sorting_desc: UserListCtrl.reverse == true}">Name</th-->
+			<th data-ng-click="UserListCtrl.predicate='LoginName';UserListCtrl.reverse=!UserListCtrl.reverse"
+				data-ng-class="{sorting: UserListCtrl.predicate != 'LoginName', sorting_asc: UserListCtrl.reverse == false, sorting_desc: UserListCtrl.reverse == true}">Login Name</th>
+			<th data-ng-click="UserListCtrl.predicate='LoginCount';UserListCtrl.reverse=!UserListCtrl.reverse"
+				data-ng-class="{sorting: UserListCtrl.predicate != 'LoginCount', sorting_asc: UserListCtrl.reverse == false, sorting_desc: UserListCtrl.reverse == true}">Login Count</th>
+			<th data-ng-click="UserListCtrl.predicate='FirstLoginDateTime';UserListCtrl.reverse=!UserListCtrl.reverse"
+				data-ng-class="{sorting: UserListCtrl.predicate != 'FirstLoginDateTime', sorting_asc: UserListCtrl.reverse == false, sorting_desc: UserListCtrl.reverse == true}">First Login</th>
+			<th data-ng-click="UserListCtrl.predicate='NewestLoginDateTime';UserListCtrl.reverse=!UserListCtrl.reverse"
+				data-ng-class="{sorting: UserListCtrl.predicate != 'NewestLoginDateTime', sorting_asc: UserListCtrl.reverse == false, sorting_desc: UserListCtrl.reverse == true}">Most Recent Login</th>
+			<th data-ng-click="UserListCtrl.predicate='CanAccessTools';UserListCtrl.reverse=!UserListCtrl.reverse"
+				data-ng-class="{sorting: UserListCtrl.predicate != 'CanAccessTools', sorting_asc: UserListCtrl.reverse == false, sorting_desc: UserListCtrl.reverse == true}">Admin User?</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr data-ng-repeat="user in UserListCtrl.userList | filter:UserListCtrl.searchText | orderBy:UserListCtrl.predicate:UserListCtrl.reverse" data-ng-click="UserListCtrl.selectUser(user.ID)">
+			<td>{{user.ID}}</td>
+			<!--td>{{user.Name}}</td-->
+			<td><input type="text" data-inline-edit data-ng-model="user.LoginName"/></td>
+			<td>{{user.LoginCount}}</td>
+			<td>{{user.FirstLoginDateTime | date}}</td>
+			<td>{{user.NewestLoginDateTime | date}}</td>
+			<td>{{user.CanAccessTools | bitToBoolean}}</td>
+		</tr>
+	</tbody>
+</table>
