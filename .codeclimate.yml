@@ -42,3 +42,5 @@ exclude_paths:
 - spec/
 - test/
 - vendor/
+- Gemfile.lock
+- app/assets/application-*
